@@ -65,18 +65,23 @@ class Food(Base, mixins.ModelMixin):
     @classmethod
     async def create(cls, session: AsyncSession, item: FoodCreate):
         food_create_arg = item.dict()
+        toppings_inst = None
         if "toppings_id" in food_create_arg:
             toppings_id_list = food_create_arg.get("toppings_id")
+            toppings_inst = (await session.scalars(select(Topping).where(Topping.id.in_(toppings_id_list)))).unique().all()
             del food_create_arg["toppings_id"]
-        new_post = cls(**food_create_arg)
-        session.add(new_post)
+        new_food = cls(**food_create_arg)
+        if toppings_inst:
+            for topping in toppings_inst:
+                new_food.toppings.append(topping)
+        session.add(new_food)
         try:
             await session.commit()  # чтоб транзакция завершилась
-            await session.refresh(new_post)
-            return new_post
+            await session.refresh(new_food)
+            return new_food
         except IntegrityError as ex:
             await session.rollback()
-            raise DuplicatedEntryError(f"Category with id={new_post.category_id} not found")
+            raise DuplicatedEntryError(f"Category with id={new_food.category_id} not found")
 
 
 foods = Food.__table__
