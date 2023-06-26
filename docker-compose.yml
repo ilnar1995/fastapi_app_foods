@@ -1,0 +1,69 @@
+version: "3.8"
+
+services:
+  db_project:
+    image: postgres:11-alpine
+    container_name: db_project
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: fastapi
+    command:  bash -c "uvicorn src.main:app --proxy-headers --host 0.0.0.0 --port 8000"
+    entrypoint: /usr/fast_api_project/docker/entrypoint.sh
+    volumes:
+      - .:/usr/fast_api_project/
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    depends_on:
+      - db_project
+#  redis:
+#    image: "redis:alpine"
+#    ports:
+#      - "6379:6379"
+#  celery:
+#    build:
+#      context: .
+#      dockerfile: ./docker/Dockerfile
+#    entrypoint: /usr/src/django_project/docker/entrypoint-celery.sh
+#    command: celery -A django_project worker -l info
+#    volumes:
+#      - .:/usr/src/django_project/
+#    depends_on:
+#      - db_project
+#      - redis
+#    env_file:
+#      - .env.dev
+#  flower:
+#    image: mher/flower
+#    environment:
+#      - CELERY_BROKER_URL=redis://redis:6379/0
+#      - FLOWER_PORT=5555
+#    ports:
+#      - 5555:5555
+#  celery-beat:
+#    build:
+#      context: .
+#      dockerfile: ./docker/Dockerfile
+#    entrypoint: /usr/src/django_project/docker/entrypoint-celery.sh
+#    command: celery -A django_project beat -l info
+#    volumes:
+#      - .:/usr/src/django_project/
+#    depends_on:
+#      - db_project
+#      - redis
+#    env_file:
+#      - .env.dev
+
+volumes:
+  postgres-data:

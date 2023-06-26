@@ -1,0 +1,4 @@
+Generic single-database configuration with an async dbapi.
+
+pipenv run alembic revision --autogenerate -m 'fixed column date in user model'
+alembic upgrade head
