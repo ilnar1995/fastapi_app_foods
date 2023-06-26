@@ -1,7 +1,17 @@
-pipenv run alembic init -t async migrations
-pipenv run alembic revision --autogenerate -m 'fixed column date in user model'
-pipenv run alembic upgrade head
+# Сервис блюд
 
+##  Запуск
+### команда на линукс:
+    sudo docker compose up 
+### команда на windows:
+    docker-compose up
 
-Запуск:
-pipenv run uvicorn src.main:app --reload
+(!!!! перед запуском на windows необходимо в папке docker у файлов entrypoint.sh поменять кодировки окончания строк с CRLF на LF)
+
+Блюда, ингредиенты и категории по умолчанию загруюаются из csv файлов автоматический при первом запуске приложения ва время миграции
+
+### Cтраница документации:
+[http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs)
+
+Эндпоинт для фильтра по пути: http://0.0.0.0:8000/menu/public_food_by_filter
+Фильтры явлются необязательными полями.

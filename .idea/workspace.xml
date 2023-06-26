@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c7959a9-5afd-49d6-9013-eddda9a8b15c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_db_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/131fa37150ed_create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/131fa37150ed_create_tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/fcb06a7b2cc3_add_default_data.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/security.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +51,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ilnar/projects/fastapi_sqlalchemy_app_foods/src",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "last_opened_file_path": "/home/ilnar/projects/django_sending_letters",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,7 +117,7 @@
       <updated>1682590468458</updated>
       <workItem from="1682590469986" duration="39933000" />
       <workItem from="1687256001451" duration="204000" />
-      <workItem from="1687256235053" duration="245417000" />
+      <workItem from="1687256235053" duration="253446000" />
     </task>
     <servers />
   </component>
