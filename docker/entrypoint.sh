@@ -7,7 +7,7 @@ then
     while ! nc -z $DB_HOST $DB_PORT; do
       sleep 1
     done
-    sleep 4
+    sleep 5
     echo "PostgreSQL started"
 fi
 

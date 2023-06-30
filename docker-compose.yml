@@ -2,16 +2,19 @@ version: "3.8"
 
 services:
   db_project:
-    image: postgres:11-alpine
-    container_name: db_project
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+#    image: postgres:11-alpine
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile_db
+    container_name: ${DB_HOST}
     ports:
       - 5435:5432
+    volumes:
+      - ./docker/create-multiple-postgresql-databases.sh:/docker-entrypoint-initdb.d/create-multiple-postgresql-databases.sh
     environment:
       POSTGRES_PASSWORD: 123456
       POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_MULTIPLE_DATABASES: ${DB_NAME_TEST}
   web:
     build:
       context: .

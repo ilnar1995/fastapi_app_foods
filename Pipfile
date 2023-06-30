@@ -12,6 +12,8 @@ uvicorn = "*"
 passlib = "*"
 fastapi-users = {extras = ["sqlalchemy"], version = "*"}
 asyncpg = "*"
+pytest = "*"
+pytest-asyncio = "*"
 
 [dev-packages]
 
