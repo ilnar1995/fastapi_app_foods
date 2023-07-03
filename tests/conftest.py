@@ -20,19 +20,25 @@ async_session_maker = sessionmaker(engine_test, class_=AsyncSession, expire_on_c
 metadata = Base.metadata
 metadata.bind = engine_test
 
+
 async def override_get_async_session() -> AsyncGenerator[AsyncSession, None]:
     async with async_session_maker() as session:
         yield session
 
+
 app.dependency_overrides[get_db_session] = override_get_async_session
+
 
 @pytest.fixture(autouse=True, scope='session')
 async def prepare_database():
+    # создание таблиц
     async with engine_test.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
+    # удаление данных
     async with engine_test.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
+
 
 # SETUP
 @pytest.fixture(scope='session')
@@ -42,9 +48,13 @@ def event_loop(request):
     yield loop
     loop.close()
 
+
 client = TestClient(app)
+
 
 @pytest.fixture(scope="session")
 async def ac() -> AsyncGenerator[AsyncClient, None]:
     async with AsyncClient(app=app, base_url="http://test") as ac:
         yield ac
+
+# pytest -v -s tests/

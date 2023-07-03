@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c7959a9-5afd-49d6-9013-eddda9a8b15c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a0247371-45f2-435a-8f3a-98ea15f174e9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_menu.py" afterDir="false" />
     </list>
@@ -114,7 +113,7 @@
       <workItem from="1682590469986" duration="39933000" />
       <workItem from="1687256001451" duration="204000" />
       <workItem from="1687256235053" duration="253446000" />
-      <workItem from="1688245498508" duration="10365000" />
+      <workItem from="1688245498508" duration="16219000" />
     </task>
     <servers />
   </component>

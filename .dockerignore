@@ -1,5 +1,5 @@
 celery_tutorial.txt
-.idea
+.idea/
 postgres-data
 __pycache__
 venv
